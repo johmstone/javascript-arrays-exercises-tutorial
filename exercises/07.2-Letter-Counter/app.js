@@ -2,5 +2,17 @@ let par = "Lorem ipsum dolor sit amet consectetur adipiscing elit Curabitur eget
 let counts = {};
 
 // your code here
+let parnew = par.replace(/\s/g, '');
 
-console.log(counts);
+for(let i=0; i<parnew.length;i++){
+    let letter = parnew[i].toLowerCase();
+    
+    if (!(letter in counts)){
+        //Object.assign(counts,{[letter]: 1})
+        counts[parnew[i]] = 1;
+    } else {
+       counts[letter]++;
+    }    
+} 
+console.log(counts); 
+
